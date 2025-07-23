@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zamani – Convert Naira to USDT</title>
+
+  <!-- Google Font, Animate.css & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      flex-wrap: wrap;
+    }
+
+    .image-section {
+      flex: 1;
+      min-width: 300px;
+      max-width: 50%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .image-section img {
+      width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .content-section {
+      flex: 1;
+      max-width: 50%;
+      min-width: 320px;
+      background: #111;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: -6px 0 12px rgba(255, 255, 255, 0.05);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #e50914;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #ddd;
+    }
+
+    .waitlist-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    input[type="email"] {
+      padding: 0.9rem;
+      background: #000;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input[type="email"]:focus {
+      border-color: #e50914;
+      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.4);
+      outline: none;
+    }
+
+    button {
+      padding: 0.9rem;
+      background: #e50914;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #a2060f;
+      animation: bounceIn 0.8s;
+    }
+
+    #message {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #0f0;
+      font-size: 0.95rem;
+    }
+
+    .social-icons {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 0.5rem;
+      font-size: 1.4rem;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #e50914;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .image-section,
+      .content-section {
+        max-width: 100%;
+        flex: 100%;
+      }
+
+      .content-section {
+        padding: 2rem 1rem;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-section animate__animated animate__fadeInLeft">
+      <img src="image3.jpeg" alt="Naira to USDT rewards" />
+    </div>
+
+    <div class="content-section animate__animated animate__fadeInRight">
+      <header>
+        <h1>Zamani App</h1>
+        <p>Convert Naira to USDT seamlessly and earn passive yield.</p>
+      </header>
+
+      <section class="waitlist-section">
+        <h2>Join Our Waitlist</h2>
+        <p>Be the first to know when we launch.</p>
+        <form id="waitlist-form">
+          <input type="email" id="email" placeholder="Enter your email" required />
+          <button type="submit">Join Waitlist</button>
+        </form>
+        <p id="message"></p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </section>
+      <footer>
+        <p>© 2025 Zamani.tech. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("waitlist-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const emailInput = document.getElementById("email");
+      const message = document.getElementById("message");
+
+      if (emailInput.validity.valid) {
+        const email = emailInput.value;
+        console.log("Email submitted:", email);
+        message.textContent = "✅ Thanks for joining the waitlist!";
+        message.style.color = "lime";
+        emailInput.value = "";
+      } else {
+        message.textContent = "Please enter a valid email.";
+        message.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
